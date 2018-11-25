@@ -15,7 +15,7 @@ class BackupFilter(object):
         dst_path = os.path.join(self.backup_dir, os.path.basename(md_img))
         # if local, copy to backup
         if file_exist(self.args.md_path, md_img):
-            print('`{}` in local system, copy to {}'.format(md_img, dst_path))
+            print('> `{}` in local system, copy to {}'.format(md_img, dst_path))
             if os.path.exists(md_img): # absolut path
                 src_path = md_img
             else: # relative path
