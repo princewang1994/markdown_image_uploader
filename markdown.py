@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 import re
 import os
 import copy
@@ -34,6 +33,7 @@ def main(args):
     md_imgs = re.findall(md_img_re, text)
 
     # output all images in markdown
+    print('Finding Images in {}'.format(args.md_path))
     if len(md_imgs):
         print('{} images found:'.format(len(md_imgs)))
         for img in md_imgs:
@@ -42,6 +42,7 @@ def main(args):
         print('No images to deploy')
         exit(0)
     
+    print('Operating.')
     try: # if there is any image to be filt 
         
         for md_img in md_imgs:
@@ -75,7 +76,6 @@ if __name__ == '__main__':
     # Upload Options
     parser.add_argument('--method', type=str, default='ali', help='Markdown file path')
     
-
     # Backup Options
     parser.add_argument('--dst', dest='backup_dir', type=str, default='./backup_img', help='Backup')
     

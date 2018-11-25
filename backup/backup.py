@@ -26,6 +26,7 @@ class BackupFilter(object):
             url = md_img
             ret = requests.get(url)
             if ret.status_code == 200:
+                print('> `{}` is valid url image, downloading to {}'.format(md_img, dst_path))
                 open(dst_path, 'wb').write(ret.content)
             else:
                 print('Cannot solve `{}`.'.format(md_img))
