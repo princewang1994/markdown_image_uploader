@@ -4,7 +4,9 @@ Python implement tool for uploading and backuping all images in markdown to AliC
 
 ## Getting Started
 
-- Configure: `$HOME/.oss/oss.conf`
+### Configure: 
+
+- configure file path: `$HOME/.oss/oss.conf`
 
 ```json
 {
@@ -15,20 +17,33 @@ Python implement tool for uploading and backuping all images in markdown to AliC
 }
 ```
 
-- **backup**
+### backup
 
 specify your markdown path and backup target directory simply by:
 
 ```shell
-python markdown.py backup example.md --dst ./backup
+$ python markdown.py backup example.md --dst ./backup
 ```
 
-- **upload**
+### upload
 
 Upload all images in the specified markdown file to AliCloud OSS:
 
 ```shell
-python markdown.py backup example.md
+$ python markdown.py backup example.md
+```
+
+## Requirements
+
+- Python 3.5 or higher
+- requests
+- oss2
+- pillow
+
+Install python package dependencies by running:
+
+```shell
+pip install -r requirements.txt
 ```
 
 ## Authors
